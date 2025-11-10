@@ -7,6 +7,8 @@ import { SalesChart } from '@/components/dashboard/sales-chart'
 import { BestSellingTable } from '@/components/dashboard/best-selling-table'
 import { LowStockAlerts } from '@/components/dashboard/low-stock-alerts'
 
+export const dynamic = 'force-dynamic'
+
 async function getDashboardData() {
   const supabase = createClient()
 

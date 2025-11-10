@@ -5,6 +5,8 @@ import { RecordSaleDialog } from '@/components/sales/record-sale-dialog'
 import { SalesTable } from '@/components/sales/sales-table'
 import { formatCurrency } from '@/lib/utils'
 
+export const dynamic = 'force-dynamic'
+
 async function getSalesData() {
   const supabase = createClient()
 

@@ -4,6 +4,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { StockTable } from '@/components/stock/stock-table'
 import { AddProductDialog } from '@/components/stock/add-product-dialog'
 
+export const dynamic = 'force-dynamic'
+
 async function getStockData() {
   const supabase = createClient()
 
