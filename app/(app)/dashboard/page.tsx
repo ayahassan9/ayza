@@ -120,16 +120,16 @@ export default async function DashboardPage() {
   const data = await getDashboardData()
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6 lg:space-y-8">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
-        <p className="text-muted-foreground">
+        <h1 className="text-2xl font-bold tracking-tight lg:text-3xl">Dashboard</h1>
+        <p className="text-sm text-muted-foreground lg:text-base">
           Overview of your jewelry business performance
         </p>
       </div>
 
       {/* Stats Grid */}
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-3 grid-cols-2 lg:grid-cols-4 lg:gap-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Chiffre d'Affaire</CardTitle>
@@ -176,11 +176,11 @@ export default async function DashboardPage() {
       </div>
 
       {/* Charts */}
-      <div className="grid gap-4 md:grid-cols-2">
+      <div className="grid gap-3 lg:gap-4 lg:grid-cols-2">
         <Card>
           <CardHeader>
-            <CardTitle>Sales Overview</CardTitle>
-            <CardDescription>Revenue trends over time</CardDescription>
+            <CardTitle className="text-lg lg:text-xl">Sales Overview</CardTitle>
+            <CardDescription className="text-xs lg:text-sm">Revenue trends over time</CardDescription>
           </CardHeader>
           <CardContent>
             <SalesChart />
@@ -189,8 +189,8 @@ export default async function DashboardPage() {
 
         <Card>
           <CardHeader>
-            <CardTitle>Best Selling Items</CardTitle>
-            <CardDescription>Top 10 products by quantity sold</CardDescription>
+            <CardTitle className="text-lg lg:text-xl">Best Selling Items</CardTitle>
+            <CardDescription className="text-xs lg:text-sm">Top 10 products by quantity sold</CardDescription>
           </CardHeader>
           <CardContent>
             <BestSellingTable data={data.bestSelling as any} />
@@ -201,8 +201,8 @@ export default async function DashboardPage() {
       {/* Low Stock Alerts */}
       <Card>
         <CardHeader>
-          <CardTitle>Low Stock Alerts</CardTitle>
-          <CardDescription>
+          <CardTitle className="text-lg lg:text-xl">Low Stock Alerts</CardTitle>
+          <CardDescription className="text-xs lg:text-sm">
             Items that are at or below the low stock threshold
           </CardDescription>
         </CardHeader>

@@ -64,12 +64,15 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 p-4">
-      <Card className="w-full max-w-md">
+      <Card className="w-full max-w-md mx-auto">
         <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl font-bold text-center">
-            {showReset ? 'Reset Password' : 'Jewelry Manager'}
+          <div className="flex justify-center mb-4">
+            <img src="/icon-192.png" alt="Ayza" className="h-16 w-16 rounded-lg" />
+          </div>
+          <CardTitle className="text-xl font-bold text-center lg:text-2xl">
+            {showReset ? 'Reset Password' : 'Ayza Manager'}
           </CardTitle>
-          <CardDescription className="text-center">
+          <CardDescription className="text-center text-sm">
             {showReset
               ? 'Enter your email to receive a password reset link'
               : 'Sign in to your account to continue'}

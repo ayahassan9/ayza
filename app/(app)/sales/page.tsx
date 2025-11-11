@@ -59,11 +59,11 @@ export default async function SalesPage() {
   const { sales, user, profile, stats } = await getSalesData()
 
   return (
-    <div className="space-y-6">
-      <div className="flex items-center justify-between">
+    <div className="space-y-4 lg:space-y-6">
+      <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Sales</h1>
-          <p className="text-muted-foreground">
+          <h1 className="text-2xl font-bold tracking-tight lg:text-3xl">Sales</h1>
+          <p className="text-sm text-muted-foreground lg:text-base">
             Record new sales and view transaction history
           </p>
         </div>
@@ -71,7 +71,7 @@ export default async function SalesPage() {
       </div>
 
       {/* Stats Cards */}
-      <div className="grid gap-4 md:grid-cols-2">
+      <div className="grid gap-3 grid-cols-2 lg:gap-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Sales</CardTitle>
@@ -102,14 +102,14 @@ export default async function SalesPage() {
       {/* Sales History */}
       <Card>
         <CardHeader>
-          <CardTitle>Sales History</CardTitle>
-          <CardDescription>
+          <CardTitle className="text-lg lg:text-xl">Sales History</CardTitle>
+          <CardDescription className="text-xs lg:text-sm">
             {profile?.role === 'staff'
               ? 'Your recent sales transactions'
               : 'All sales transactions'}
           </CardDescription>
         </CardHeader>
-        <CardContent>
+        <CardContent className="overflow-x-auto">
           <SalesTable sales={sales} />
         </CardContent>
       </Card>

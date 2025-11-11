@@ -44,11 +44,11 @@ export default async function StockPage() {
   const { products } = await getStockData()
 
   return (
-    <div className="space-y-6">
-      <div className="flex items-center justify-between">
+    <div className="space-y-4 lg:space-y-6">
+      <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Stock Management</h1>
-          <p className="text-muted-foreground">
+          <h1 className="text-2xl font-bold tracking-tight lg:text-3xl">Stock Management</h1>
+          <p className="text-sm text-muted-foreground lg:text-base">
             Manage your jewelry inventory and product variants
           </p>
         </div>
@@ -57,12 +57,12 @@ export default async function StockPage() {
 
       <Card>
         <CardHeader>
-          <CardTitle>Inventory</CardTitle>
-          <CardDescription>
+          <CardTitle className="text-lg lg:text-xl">Inventory</CardTitle>
+          <CardDescription className="text-xs lg:text-sm">
             All products and their variants in your stock
           </CardDescription>
         </CardHeader>
-        <CardContent>
+        <CardContent className="overflow-x-auto">
           <StockTable products={products} />
         </CardContent>
       </Card>
