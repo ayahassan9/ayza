@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
-import { LayoutDashboard, Package, ShoppingCart, LogOut, Menu, X } from 'lucide-react'
+import { LayoutDashboard, Package, ShoppingCart, LogOut, Menu, X, Home } from 'lucide-react'
 import { ThemeToggle } from './theme-toggle'
 import { Button } from './ui/button'
 import { useEffect, useState } from 'react'
@@ -164,6 +164,31 @@ export function Sidebar() {
             Log Out
           </Button>
         </div>
+      </div>
+
+      {/* Mobile Bottom Navigation */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 border-t bg-card lg:hidden">
+        <nav className="flex items-center justify-around px-2 py-2">
+          {filteredNavigation.map((item) => {
+            const isActive = pathname.startsWith(item.href)
+            const Icon = item.icon
+
+            return (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={`flex flex-col items-center justify-center gap-1 rounded-lg px-3 py-2 text-xs font-medium transition-colors min-w-0 flex-1 ${
+                  isActive
+                    ? 'bg-primary text-primary-foreground'
+                    : 'text-muted-foreground hover:bg-accent hover:text-accent-foreground'
+                }`}
+              >
+                <Icon className="h-5 w-5" />
+                <span className="truncate">{item.name}</span>
+              </Link>
+            )
+          })}
+        </nav>
       </div>
     </>
   )
